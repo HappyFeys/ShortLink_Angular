@@ -1,0 +1,8 @@
+<app-header />
+<app-hero />
+<app-input-link (linkEvent)="postUrl($event)"/>
+<div class="secondPartie">
+    <app-list-links [linksStorage]="linkList"/>
+    <app-statistics [linksStorage]="linkList"/>
+</div>
+<app-footer />

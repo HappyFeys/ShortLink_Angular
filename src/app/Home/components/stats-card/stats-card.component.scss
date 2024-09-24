@@ -1,0 +1,38 @@
+:host{
+    width: 80%;
+}
+
+.stats-card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+    background-color: var(--white);
+    width: 100%;
+    border-radius: 10px;
+    z-index: 3;
+    .stats-card__icon{
+        background-color: var(--veryDarkBlue);
+        border-radius: 50%;
+        width: 100px;
+        height: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: -50px;
+        margin-bottom: 25px;
+        img{
+            width: 50px;
+            margin: 20px;
+        }
+    }
+    .stats-card__text{
+        width: 80%;
+        p{
+            color: var(--grayishViolet);
+            font-size: 16px;   
+            margin: 20px 0;    
+        }
+    }
+}

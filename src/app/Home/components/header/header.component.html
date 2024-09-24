@@ -1,0 +1,18 @@
+<header class="header">
+    <img src="logo.svg" alt="ShortLink" class="header__logo">
+    <nav class="header__nav">
+        <img src="menu-outline.svg" alt="Menu hamburger" class="header__hamburger" (click)="toggleMenu()">
+    </nav>
+    <div class="header__links" *ngIf="isMenuOpen">
+        <div class="header__link--option">
+            <p>Features</p>
+            <p>Pricing</p>
+            <p>Resources</p>
+        </div>
+        <hr>
+        <div class="header__link--connexion">
+            <p>Login</p>
+            <p class="header__link--sign-up">Sign up</p>
+        </div>
+    </div>
+</header>
