@@ -25,4 +25,9 @@ body{
     font-weight: 500;
 }
 
+@mixin responsive($width) {
+    @media only screen and (min-width: $width) {
+        @content;
+    }
+}
 

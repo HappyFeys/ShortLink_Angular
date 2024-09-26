@@ -22,6 +22,15 @@
         flex-direction: column;
         align-items: center;
         width: 90%;
+        form{
+            width: 100%;
+        }
+        .input-link__error{
+            color: var(--red);
+            font-size: 14px;
+            margin-top: 5px;
+            width: fit-content;
+        }
     }
     .input-link__input{
         width: 100%;
@@ -33,6 +42,9 @@
             color: var(--grayishViolet);
             font-size: 18px;
             font-weight: 700;
+        }
+        &:focus{
+            outline: none;
         }
     }
     .input-link__button{

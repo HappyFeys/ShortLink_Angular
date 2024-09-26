@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { HeaderComponent } from '../../components/header/header.component';
 import { HeroComponent } from '../../components/hero/hero.component';
 import { InputLinkComponent } from '../../components/input-link/input-link.component';
@@ -7,7 +7,8 @@ import { StatisticsComponent } from '../../components/statistics/statistics.comp
 import { FooterComponent } from '../../components/footer/footer.component';
 import { CommonModule } from '@angular/common';
 import { ApiServiceService } from '../../../services/api-service.service';
-import { Link, LinkList } from '../../../models/apiResponse';
+import { Link } from '../../../models/apiResponse';
+import { LocalStorageService } from '../../../services/local-storage.service';
 
 @Component({
   selector: 'app-home',
@@ -19,16 +20,20 @@ import { Link, LinkList } from '../../../models/apiResponse';
     ListLinksComponent,
     StatisticsComponent,
     FooterComponent,
-    CommonModule
+    CommonModule,
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
-export class HomeComponent {
+export class HomeComponent implements OnInit{
 
   linkList: Link[] = [];
 
-  constructor(private apiService: ApiServiceService) {}
+  constructor(private apiService: ApiServiceService, private localStorage: LocalStorageService) {}
+
+  ngOnInit(): void {
+    this.linkList = this.localStorage.Get('linkList', this.linkList);
+  }
 
   postUrl(url: string) {
     return this.apiService.postUrl(url).subscribe({
@@ -37,6 +42,7 @@ export class HomeComponent {
           full_link: url,
           short_link: response.result_url
         });
+        this.localStorage.Set('linkList', this.linkList);
         console.log(this.linkList);
       },
       error: (error) => {

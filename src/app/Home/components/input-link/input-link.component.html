@@ -1,7 +1,11 @@
 <div class="input-link">
     <img src="bg-shorten-mobile.svg" alt="bg-shorten-mobile">
     <div class="input-link__form">
-        <input type="text" placeholder="Shorten a link here..." class="input-link__input" [(ngModel)]="link">
-        <button class="input-link__button" (click)="onSubmit()">Shorten it!</button>
+        <form [formGroup]="linkForm" (ngSubmit)="onSubmit()">
+            <input type="text" placeholder="Shorten a link here..." class="input-link__input" formControlName="link">
+            <p class="input-link__error" *ngIf="submitted && linkForm.get('link')?.errors?.['pattern']">Please add a valid link</p>
+            <p class="input-link__error" *ngIf="submitted && linkForm.get('link')?.errors?.['required']">Please add a link</p>
+            <button class="input-link__button" type="submit">Shorten it!</button>
+        </form>
     </div>
 </div>

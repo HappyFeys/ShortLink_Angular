@@ -32,6 +32,8 @@
             width: 90%;
             .list-links__short--link{
                 padding: 10px 0;
+                text-decoration: none;
+                color: var(--cyan);
             }
             .list-links__short--copy{
                 background-color: var(--cyan);

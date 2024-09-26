@@ -1,9 +1,9 @@
 <section class="list-links" *ngIf="linksStorage" [ngClass]="[linksStorage.length > 0 ? 'list-links--active' : '']">
-    <div *ngFor="let link of linksStorage" class="list-links--unity">
+    <div *ngFor="let link of linksStorage; let i = index" class="list-links--unity">
         <p class="list-links__full">{{link.full_link}}</p>
         <div class="list-links__short">
-            <p class="list-links__short--link">{{link.short_link}}</p>
-            <button class="list-links__short--copy">Copy</button>
+            <a href="{{link.short_link}}" class="list-links__short--link">{{link.short_link}}</a>
+            <button class="list-links__short--copy" [cdkCopyToClipboard]="link.short_link" (cdkCopyToClipboardCopied)="onCopy(i)">{{ copiedIndex === i ? 'Copied!' : 'Copy'}}</button>
         </div>
 
     </div>
