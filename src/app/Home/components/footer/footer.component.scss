@@ -1,3 +1,5 @@
+@import './../../../styles/mixins';
+
 .boost{
     display: flex;
     flex-direction: column;
@@ -22,6 +24,10 @@
         border-radius: 30px;
         font-size: 18px;
         font-weight: 700;
+        @include responsive(1200px){
+            width: fit-content;
+            padding: 10px 20px;
+        }
     }
 }
 footer{

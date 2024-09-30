@@ -3,7 +3,7 @@
     <nav class="header__nav">
         <img src="menu-outline.svg" alt="Menu hamburger" class="header__hamburger" (click)="toggleMenu()">
     </nav>
-    <div class="header__links" *ngIf="isMenuOpen">
+    <div class="header__links" [ngClass]="[isMenuOpen ? 'header__links--active' : '']">
         <div class="header__link--option">
             <p>Features</p>
             <p>Pricing</p>
@@ -14,5 +14,5 @@
             <p>Login</p>
             <p class="header__link--sign-up">Sign up</p>
         </div>
-    </div>
+    </div> 
 </header>

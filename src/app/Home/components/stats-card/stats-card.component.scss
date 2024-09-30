@@ -1,3 +1,5 @@
+@import './../../../styles/mixins';
+
 :host{
     width: 80%;
 }
@@ -12,6 +14,10 @@
     width: 100%;
     border-radius: 10px;
     z-index: 3;
+    @include responsive(1200px){
+        width: fit-content;
+        padding: 0 50px;
+    }
     .stats-card__icon{
         background-color: var(--veryDarkBlue);
         border-radius: 50%;
@@ -32,7 +38,18 @@
         p{
             color: var(--grayishViolet);
             font-size: 16px;   
-            margin: 20px 0;    
+            margin: 20px 0; 
         }
+    }
+}
+.statistics__card--second {
+    @include responsive(1200px){
+        margin-top: 100px;
+    }
+}
+
+.statistics__card--third {
+    @include responsive(1200px){
+        margin-top: 220px;
     }
 }

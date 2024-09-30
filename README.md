@@ -1,27 +1,53 @@
-# ShortLink
+# Frontend Mentor - Job listings with filtering solution
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.2.
+Ceci est un petit projet réalisé dans le cadre de ma formation chez BeCode. Ce Challenge est une solution pour [l'outil de raccourci d'URL sur Frontend Mentor](https://www.frontendmentor.io/challenges/url-shortening-api-landing-page-2ce3ob-G). Les challenges Frontend Mentor nous aide à nous améliorer en réalisant des projets complets. 
 
-## Development server
+## Table of contents
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- [Overview](#overview)
+  - [The challenge](#the-challenge)
+  - [Screenshot](#screenshot)
+- [My process](#my-process)
+  - [Built with](#built-with)
+  - [What I learned](#what-i-learned)
+- [Author](#author)
 
-## Code scaffolding
+## Overview
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### The challenge
 
-## Build
+Les utilisateurs doivent pouvoir
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+- afficher la présentation optimale du site en fonction de la taille de l'écran de leur appareil
+- Raccourcir n'importe quelle URL valide
+- Voir une liste de leurs liens raccourcis, même après avoir actualisé le navigateur
+- Copier le lien raccourci dans leur presse-papiers en un seul clic
+- Recevoir un message d'erreur lorsque le `formulaire` est soumis si :
+    - Le champ `input` est vide
+    - L'URL n'est pas une URL valide. 
 
-## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### Screenshot
 
-## Running end-to-end tests
+![desktop design](/public/desktop-design.jpg) 
+![mobile design](/public/mobile-design.jpg)
+![mobile navigation](/public/mobile-navigation.jpg) 
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## My process
 
-## Further help
+### Built with
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+- Angular
+- Semantic HTML5 markup
+- SCSS custom properties
+- Flexbox
+- Mobile-first workflow
+
+
+### What I learned
+
+Grâce à ce projet, j'ai pu apprendre quelques concepts et situations que j'ai pu résoudre avec Angular. 
+
+## Author
+
+- Github - [Dylan Feys](https://github.com/HappyFeys)

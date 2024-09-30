@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, HostListener, Output } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 
 @Component({
@@ -18,11 +18,17 @@ export class InputLinkComponent {
 
   linkForm!: FormGroup
   submitted: boolean = false
+  windowSize: number = window.innerWidth
 
   constructor(private formBuilder: FormBuilder) {
     this.linkForm = this.formBuilder.group({
       link: ['', [Validators.required, Validators.pattern('https?://.+')]]
     })
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event: Event): void {
+    this.windowSize = window.innerWidth; 
   }
 
 

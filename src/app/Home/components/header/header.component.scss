@@ -1,3 +1,6 @@
+@import './../../../styles/mixins';
+
+
 .header{
     padding-top: 10px;
     display: flex;
@@ -5,8 +8,13 @@
     position: relative;
     width: 100%;
     padding: 20px;
+    @include responsive(1200px){
+        padding: 20px 40px;
+    }
     .header__nav{
-
+        @include responsive(1200px){
+            display: none;
+        }
         .header__hamburger{
             width: 33px;
         }
@@ -21,18 +29,29 @@
         background-color: var(--darkViolet);
         width: 90%;
         padding: 40px 0;
-        display: flex;
+        display: none;
         flex-direction: column;
         align-items: center;
         color: var(--white);
         border-radius: 10px;
         gap: 20px;
+        @include responsive(1200px){
+            display: flex;
+            position: relative;
+            top: 0;
+            flex-direction: row;
+            background-color: #fff;
+            color: var(--grayishViolet);
+        }
         .header__link--option{
             display: flex;
             flex-direction: column;
             align-items: center;
             gap: 20px;
             width: 90%;
+            @include responsive(1200px){
+                flex-direction: row;
+            }
         }
         .header__link--connexion{
             display: flex;
@@ -40,12 +59,20 @@
             align-items: center;
             gap: 20px;
             width: 90%;
+            @include responsive(1200px){
+                flex-direction: row;
+                width: 25%;
+            }
             .header__link--sign-up{
                 background-color: var(--cyan);
                 padding: 10px 20px;
                 border-radius: 20px;
                 width: 100%;
                 text-align: center;
+                @include responsive(1200px){
+                    width: fit-content;
+                    color: var(--white);
+                }
             }
         }
         p{
@@ -57,6 +84,12 @@
             height: 1px;
             background-color: var(--gray);
             border: none;
+            @include responsive(1200px){
+                display: none;
+            }
         }
+    }
+    .header__links--active{
+        display: flex;
     }
 }

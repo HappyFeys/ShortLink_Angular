@@ -1,5 +1,5 @@
 <div class="input-link">
-    <img src="bg-shorten-mobile.svg" alt="bg-shorten-mobile">
+    <img [src]="windowSize> 1200 ? 'bg-shorten-desktop.svg' : 'bg-shorten-mobile.svg'" alt="bg-shorten-mobile">
     <div class="input-link__form">
         <form [formGroup]="linkForm" (ngSubmit)="onSubmit()">
             <input type="text" placeholder="Shorten a link here..." class="input-link__input" formControlName="link">
